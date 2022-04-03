@@ -21,6 +21,13 @@
 	}
 	h1{
 		text-align: center;
+		color: #ecf0f1;
+		font-size: 50px;
+		letter-spacing: 5px;
+		font-weight: 100;
+		/* 文字阴影 */
+		text-shadow: 5px 5px 5px rgba(33,45,58,0.3);
+		z-index: 1;
 	}
 	.contianer{
 		display: flex;
@@ -29,7 +36,7 @@
 		flex-direction: column;/* 垂直方向 */
 
 		width: 600px;
-		height: 450px;
+		height: 600px;
 		background-color: #568fd1;
 
 		border-radius: 20px;
@@ -44,7 +51,15 @@
 		display: flex;
 		justify-content: space-around;
 		flex-direction: column;
-		z-index: 1;/* 层级，1为在平面上一层（大概 */
+		z-index: 1;/* 层级 */
+
+		color: white;
+		/* font-size: 50px; */
+		letter-spacing: 5px;
+		font-weight: 100;
+		/* 文字阴影 */
+		text-shadow: 5px 5px 5px rgba(33,45,58,0.3);
+		z-index: 1;
 	}
 	footer{
 		/*位置在页面底部*/
@@ -52,9 +67,55 @@
 		bottom: 0;
 		/* width: 30%; */
 		width: 300px;
-		height: 50px;
+		height: 30px;
 		text-align: center;
 		font-size: small;
+	}
+	#context{
+		/* width: 250px; */
+		margin-top: 10%;
+		width: 400px;
+		height: 40px;
+		outline: none;
+		border: none;
+		border-bottom: 1px solid #fff;
+		background: none;
+		color:#fff;
+		font-size: 15px;
+	}
+	#context::placeholder{
+    	font-size: 15px;
+		color: white;
+		/* font-size: 50px; */
+		letter-spacing: 5px;
+		font-weight: 100;
+		/* 文字阴影 */
+		text-shadow: 5px 5px 5px rgba(33,45,58,0.3);
+		z-index: 1;
+	}
+	.inside button{
+		width: 250px;
+		height: 40px;
+		outline: none;
+		border:1px solid #fff;
+		border-radius: 20px;
+		letter-spacing: 5px;
+		color:#fff;
+		background: none;
+		cursor: pointer;
+		margin-top: 10px;
+		align-self: center;
+		/* align-items: center; */
+		transition: 0.4s;
+	}
+	.inside button:hover{
+		background-color: #fff;
+		color: #568fd1;
+	}
+	#setColorDiv,#finalStringDiv{
+		color: black;
+		background-color: white;
+		border-radius: 5px;
 	}
 	
 </style>
@@ -64,11 +125,11 @@
 			<h1>驴哒|Lv_da</h1>
 			<!--输入文本：--><input id="context" type="text" placeholder="随便输点啥"> &emsp;<button onclick="resetContext()">重置</button> &emsp;<button onclick="nextStep_Context()">下一步</button></br></br>
 			
-			点击文字设置颜色：</br>
-			<div id="setColorDiv" style="border:1px solid black;width:400px;"></div>
+			点击文字设置颜色： </br>
+			<div id="setColorDiv" style="border:1px solid white;width:400px;"></div>
 			
 			<button onclick="preview()">预览效果</button> &emsp; <button onclick="resetColorDiv()">重置颜色</button> &emsp; <button onclick="nextStep_setColor()">下一步</button> </br></br>
-			<div id="finalStringDiv" style="border:1px solid black;width:400px;"></div>
+			<div id="finalStringDiv" style="border:1px solid white;width:400px;"></div>
 			
 			
 			<input id="colorCompent" type="color" onchange="currentClickCharNode.setAttribute('color',this.value);" />
@@ -201,7 +262,7 @@
 				}
 			</script>
 			
-			<button onclick="toHex(12,88,168)">测试十六进制0C58A8</button>
+			<!-- <button onclick="toHex(12,88,168)">测试十六进制0C58A8</button> -->
 		</div>
 	</div>
 	<footer>
